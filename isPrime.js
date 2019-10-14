@@ -19,11 +19,19 @@ let isPrime = (n) => {
         return false;
     }
     //only checking starting at 3 odd numbers up to sqrt of n
-    for (let i = 3; Math.sqrt(n); i+=2){
+    for (let i = 3; i < Math.sqrt(n); i+=2){
         //check if n can be divided by i without a remainder
-        if (!(n%i)){
+        if (n%i === 0){
             return false;
         }
     }
     return true;
 }
+console.log(
+`
+is 30 prime: ${isPrime(30)}
+is 2 prime: ${isPrime(2)}
+is 11 prime: ${isPrime(11)}
+is 199 prime: ${isPrime(199)}
+is 10000089888877 prime: ${isPrime(10000089888877)}
+`)
